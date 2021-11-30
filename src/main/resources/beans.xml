@@ -28,7 +28,7 @@
         <property name="colonization" value="false"/>
     </bean>
 
-    <bean id="solarSystem" class="by.itacademy.mikhalevich.universe.model.SolarSystem">
+    <bean id="solarSystem" class="by.itacademy.mikhalevich.universe.model.SolarSystem" init-method="start" destroy-method="finish">
         <constructor-arg name="id" value="1"/>
         <constructor-arg name="name" value="Solar System"/>
         <constructor-arg name="alias" value="SLRSSTM"/>

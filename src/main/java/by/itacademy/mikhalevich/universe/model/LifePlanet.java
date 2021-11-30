@@ -16,4 +16,5 @@ public class LifePlanet extends Entity {
         super(id, name);
         this.lifeForm = lifeForm;
     }
+
 }

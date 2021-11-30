@@ -31,4 +31,13 @@ public class SolarSystem extends Entity {
         this.lifePlanet = lifePlanet;
         this.nonLifePlanets = nonLifePlanets;
     }
+
+    public void start(){
+        System.out.println("SolarSystem " + alias + " has been created");
+    }
+
+    public void finish(){
+        System.out.println("SolarSystem " + alias + " has been finished");
+    }
+
 }
