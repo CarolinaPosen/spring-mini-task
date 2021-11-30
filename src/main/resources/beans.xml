@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="mars" class="by.itacademy.mikhalevich.universe.model.NonLifePlanet">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg name="name" value="Mars"/>
+        <constructor-arg name="isColonization" value="true"/>
+    </bean>
+
+    <bean id="earth" class="by.itacademy.mikhalevich.universe.model.LifePlanet">
+        <constructor-arg name="id" value="2"/>
+        <constructor-arg name="name" value="Earth"/>
+        <constructor-arg name="lifeForm">
+            <list>
+                <value>100</value>
+                <value>200</value>
+                <value>300</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="venus" class="by.itacademy.mikhalevich.universe.model.NonLifePlanet">
+        <property name="id" value="3"/>
+        <property name="name" value="Venus"/>
+        <property name="colonization" value="false"/>
+    </bean>
+
+    <bean id="solarSystem" class="by.itacademy.mikhalevich.universe.model.SolarSystem">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="Solar System"/>
+        <constructor-arg name="alias" value="SLRSSTM"/>
+        <constructor-arg name="lifePlanet" ref="earth"/>
+        <property name="nonLifePlanets">
+            <list>
+                <ref bean="mars"/>
+                <ref bean="venus"/>
+            </list>
+
+        </property>
+    </bean>
+
+</beans>

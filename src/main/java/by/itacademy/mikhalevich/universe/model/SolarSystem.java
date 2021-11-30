@@ -19,6 +19,12 @@ public class SolarSystem extends Entity {
     private LifePlanet lifePlanet;
     private List<NonLifePlanet> nonLifePlanets;
 
+    public SolarSystem(int id, String name, String alias, LifePlanet lifePlanet) {
+        super(id, name);
+        this.alias = alias;
+        this.lifePlanet = lifePlanet;
+    }
+
     public SolarSystem(int id, String name, String alias, LifePlanet lifePlanet, List<NonLifePlanet> nonLifePlanets) {
         super(id, name);
         this.alias = alias;
