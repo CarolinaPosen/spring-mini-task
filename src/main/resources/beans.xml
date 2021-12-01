@@ -58,7 +58,19 @@
                 <ref bean="mars"/>
                 <ref bean="venus"/>
             </list>
+        </property>
+    </bean>
 
+    <bean id="unknownStarSystem" class="by.itacademy.mikhalevich.universe.model.SolarSystem">
+        <constructor-arg name="id" value="#{solarSystem.id+1000}"/>
+        <constructor-arg name="name" value="#{'Unknown Star System ' + solarSystem.getClass().getSimpleName() }"/>
+        <constructor-arg name="alias" value="SLRSSTM"/>
+        <constructor-arg name="lifePlanet" ref="earth"/>
+        <property name="nonLifePlanets">
+            <list>
+                <ref bean="mars"/>
+                <ref bean="venus"/>
+            </list>
         </property>
     </bean>
 
