@@ -3,6 +3,7 @@ package by.itacademy.mikhalevich.universe.model;
 import lombok.*;
 
 import java.util.List;
+import java.util.Map;
 
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
@@ -10,9 +11,9 @@ import java.util.List;
 @NoArgsConstructor
 public class LifePlanet extends Entity {
 
-    private List<Integer> lifeForm;
+    private Map<String, Integer> lifeForm;
 
-    public LifePlanet(int id, String name, List<Integer> lifeForm) {
+    public LifePlanet(int id, String name, Map<String, Integer> lifeForm) {
         super(id, name);
         this.lifeForm = lifeForm;
     }

@@ -6,6 +6,7 @@ import by.itacademy.mikhalevich.universe.model.SolarSystem;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Map;
 
 public class StartOldIoc {
 
@@ -14,7 +15,7 @@ public class StartOldIoc {
         NonLifePlanet mercury = new NonLifePlanet(2, "Mercury", false);
         NonLifePlanet venus = new NonLifePlanet(3, "Venus", false);
 
-        LifePlanet earth = new LifePlanet(4, "Earth", List.of(100, 200, 300));
+        LifePlanet earth = new LifePlanet(4, "Earth", Map.of("Human", 200, "Plants", 300, "Bacteria", 1000));
 
         SolarSystem solarSystem = new SolarSystem(5, "SolarSystem", "SLRSTM", earth, List.of(mars, mercury, venus));
 
