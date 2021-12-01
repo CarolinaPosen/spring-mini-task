@@ -9,8 +9,8 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-autowire="byType"
 >
-
 
     <context:property-placeholder location="planet.properties, star-system.properties"/>
 
@@ -41,12 +41,12 @@
         <entry key="Bacteria" value="300"/>
     </util:map>
 
-    <bean id="starSystem" class="by.itacademy.mikhalevich.universe.model.StarSystem" init-method="start"
+    <bean id="solarSystem" class="by.itacademy.mikhalevich.universe.model.StarSystem" init-method="start"
           destroy-method="finish">
         <constructor-arg name="id" value="${solarSystem.id}"/>
         <constructor-arg name="name" value="${solarSystem.name}"/>
         <constructor-arg name="alias" value="${solarSystem.alias}"/>
-        <constructor-arg name="lifePlanet" ref="earth"/>
+<!--        <constructor-arg name="lifePlanet" ref="earth"/>-->
         <property name="nonLifePlanets">
             <list>
                 <ref bean="mars"/>
