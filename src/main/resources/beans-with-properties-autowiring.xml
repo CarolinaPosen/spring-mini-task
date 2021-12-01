@@ -33,7 +33,7 @@
     </util:list>
 
     <bean id="earth" class="by.itacademy.mikhalevich.universe.model.LifePlanet" c:id="${earth.id}" c:name="${earth.name}">
-        <qualifier value="earth-qualifier"/>
+        <qualifier type="by.itacademy.mikhalevich.universe.model.qualifiers.EarthQualifier"/>
         <constructor-arg name="lifeForm" value="#{${earth.lifeForm}}"/>
     </bean>
 
@@ -44,7 +44,7 @@
     </util:map>
 
     <bean id="teegarden" class="by.itacademy.mikhalevich.universe.model.SyntheticLifePlanet" c:id="2" c:name="Teegarden">
-        <qualifier value="teegarden-qualifier"/>
+        <qualifier type="by.itacademy.mikhalevich.universe.model.qualifiers.TeegardenQualifier"/>
     </bean>
 
 
