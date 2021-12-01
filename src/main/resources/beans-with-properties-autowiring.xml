@@ -12,6 +12,7 @@
        default-autowire="byType"
 >
 
+    <context:annotation-config/>
     <context:property-placeholder location="planet.properties, star-system.properties"/>
 
     <bean id="mars" class="by.itacademy.mikhalevich.universe.model.NonLifePlanet">
@@ -31,7 +32,8 @@
         <ref bean="venus"/>
     </util:list>
 
-    <bean id="earth" class="by.itacademy.mikhalevich.universe.model.LifePlanet" c:id="${earth.id}" c:name="${earth.name}" autowire-candidate="false">
+    <bean id="earth" class="by.itacademy.mikhalevich.universe.model.LifePlanet" c:id="${earth.id}" c:name="${earth.name}">
+        <qualifier value="earth-qualifier"/>
         <constructor-arg name="lifeForm" value="#{${earth.lifeForm}}"/>
     </bean>
 
@@ -41,11 +43,12 @@
         <entry key="Bacteria" value="300"/>
     </util:map>
 
-    <bean id="teegarden" class="by.itacademy.mikhalevich.universe.model.LifePlanet" c:id="2" c:name="Teegarden">
+    <bean id="teegarden" class="by.itacademy.mikhalevich.universe.model.SyntheticLifePlanet" c:id="2" c:name="Teegarden">
+        <qualifier value="teegarden-qualifier"/>
     </bean>
 
 
-    <bean id="solarSystem" class="by.itacademy.mikhalevich.universe.model.StarSystem" init-method="start"
+    <bean id="solarSystem" class="by.itacademy.mikhalevich.universe.model.StarSystem" autowire="byName" init-method="start"
           destroy-method="finish">
         <constructor-arg name="id" value="${solarSystem.id}"/>
         <constructor-arg name="name" value="${solarSystem.name}"/>

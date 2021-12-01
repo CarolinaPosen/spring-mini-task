@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
 
@@ -16,6 +18,8 @@ public class StarSystem extends Entity {
 
     private String alias;
 
+    @Autowired
+    @Qualifier("teegarden-qualifier")
     private LifePlanet lifePlanet;
     private List<NonLifePlanet> nonLifePlanets;
 
