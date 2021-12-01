@@ -1,8 +1,6 @@
 package by.itacademy.mikhalevich.universe;
 
-import by.itacademy.mikhalevich.universe.model.LifePlanet;
-import by.itacademy.mikhalevich.universe.model.SolarSystem;
-import org.springframework.context.ApplicationContext;
+import by.itacademy.mikhalevich.universe.model.StarSystem;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -16,7 +14,7 @@ public class StartWithXml {
 //        SolarSystem solarSystem = ctx.getBean("solarSystem", SolarSystem.class);
 //        solarSystem.print();
 
-        SolarSystem unknownStarSystem = ctx.getBean("unknownStarSystem", SolarSystem.class);
+        StarSystem unknownStarSystem = ctx.getBean("unknownStarSystem", StarSystem.class);
         unknownStarSystem.print();
 
     }
