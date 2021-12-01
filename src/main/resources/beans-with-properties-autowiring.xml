@@ -31,7 +31,7 @@
         <ref bean="venus"/>
     </util:list>
 
-    <bean id="earth" class="by.itacademy.mikhalevich.universe.model.LifePlanet" c:id="${earth.id}" c:name="${earth.name}" primary="true">
+    <bean id="earth" class="by.itacademy.mikhalevich.universe.model.LifePlanet" c:id="${earth.id}" c:name="${earth.name}" autowire-candidate="false">
         <constructor-arg name="lifeForm" value="#{${earth.lifeForm}}"/>
     </bean>
 
