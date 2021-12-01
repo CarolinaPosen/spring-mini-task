@@ -65,14 +65,11 @@
         <constructor-arg name="id" value="#{starSystem.id+1000}"/>
         <constructor-arg name="name" value="#{'Unknown ' + starSystem.getClass().getSimpleName() }"/>
         <constructor-arg name="alias" value="#{starSystem.getClass().getSimpleName().toUpperCase().substring(4)}"/>
-
         <property name="lifePlanet">
             <bean class="by.itacademy.mikhalevich.universe.model.LifePlanet"
                   c:id="#{T(Math).random()*10}"
                   c:name="unknownPlanet"/>
         </property>
-
-
         <property name="nonLifePlanets">
             <list>
                 <ref bean="mars"/>
