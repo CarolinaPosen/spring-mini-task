@@ -1,5 +1,6 @@
 package by.itacademy.mikhalevich.universe.model;
 
+import by.itacademy.mikhalevich.universe.model.qualifiers.CustomClassQualifier;
 import by.itacademy.mikhalevich.universe.model.qualifiers.EarthQualifier;
 import by.itacademy.mikhalevich.universe.model.qualifiers.TeegardenQualifier;
 import lombok.AllArgsConstructor;
@@ -21,7 +22,8 @@ public class StarSystem extends Entity {
     private String alias;
 
     @Autowired
-    @TeegardenQualifier
+//    @TeegardenQualifier
+    @CustomClassQualifier(clazz = SyntheticLifePlanet.class)
     private LifePlanet lifePlanet;
     private List<NonLifePlanet> nonLifePlanets;
 

@@ -1,5 +1,6 @@
 package by.itacademy.mikhalevich.universe.model;
 
+import by.itacademy.mikhalevich.universe.model.qualifiers.CustomClassQualifier;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -11,6 +12,7 @@ import java.util.Map;
 @ToString(callSuper = true)
 @Data
 @NoArgsConstructor
+@CustomClassQualifier(clazz = SyntheticLifePlanet.class)
 public class SyntheticLifePlanet extends LifePlanet {
 
     private String material;
