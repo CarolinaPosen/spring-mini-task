@@ -1,4 +1,4 @@
-package by.itacademy.mikhalevich.universe.model;
+package by.itacademy.mikhalevich.universe.model.system;
 
 import by.itacademy.mikhalevich.universe.model.qualifiers.CustomClassQualifier;
 import lombok.Data;

@@ -14,13 +14,13 @@
 
     <context:property-placeholder location="planet.properties, star-system.properties"/>
 
-    <bean id="mars" class="by.itacademy.mikhalevich.universe.model.NonLifePlanet">
+    <bean id="mars" class="by.itacademy.mikhalevich.universe.model.system.NonLifePlanet">
         <constructor-arg index="0" value="${mars.id}"/>
         <constructor-arg name="name" value="${mars.name}"/>
         <constructor-arg name="isColonization" value="${mars.isColonization}"/>
     </bean>
 
-    <bean id="venus" class="by.itacademy.mikhalevich.universe.model.NonLifePlanet">
+    <bean id="venus" class="by.itacademy.mikhalevich.universe.model.system.NonLifePlanet">
         <property name="id" value="${venus.id}"/>
         <property name="name" value="${venus.name}"/>
         <property name="colonization" value="${venus.isColonization}"/>
@@ -31,7 +31,7 @@
         <ref bean="venus"/>
     </util:list>
 
-    <bean id="earth" class="by.itacademy.mikhalevich.universe.model.LifePlanet" c:id="${earth.id}" c:name="${earth.name}">
+    <bean id="earth" class="by.itacademy.mikhalevich.universe.model.system.LifePlanet" c:id="${earth.id}" c:name="${earth.name}">
         <constructor-arg name="lifeForm" value="#{${earth.lifeForm}}"/>
     </bean>
 
@@ -41,7 +41,7 @@
         <entry key="Bacteria" value="300"/>
     </util:map>
 
-    <bean id="starSystem" class="by.itacademy.mikhalevich.universe.model.StarSystem" init-method="start"
+    <bean id="starSystem" class="by.itacademy.mikhalevich.universe.model.system.StarSystem" init-method="start"
           destroy-method="finish">
         <constructor-arg name="id" value="${solarSystem.id}"/>
         <constructor-arg name="name" value="${solarSystem.name}"/>

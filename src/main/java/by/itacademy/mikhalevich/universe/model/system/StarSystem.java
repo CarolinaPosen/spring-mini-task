@@ -1,15 +1,12 @@
-package by.itacademy.mikhalevich.universe.model;
+package by.itacademy.mikhalevich.universe.model.system;
 
+import by.itacademy.mikhalevich.universe.model.Entity;
 import by.itacademy.mikhalevich.universe.model.qualifiers.CustomClassQualifier;
-import by.itacademy.mikhalevich.universe.model.qualifiers.EarthQualifier;
-import by.itacademy.mikhalevich.universe.model.qualifiers.TeegardenQualifier;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
 
@@ -21,9 +18,9 @@ public class StarSystem extends Entity {
 
     private String alias;
 
-    @Autowired
+//    @Autowired
 //    @TeegardenQualifier
-    @CustomClassQualifier(clazz = SyntheticLifePlanet.class)
+//    @CustomClassQualifier(clazz = SyntheticLifePlanet.class)
     private LifePlanet lifePlanet;
     private List<NonLifePlanet> nonLifePlanets;
 

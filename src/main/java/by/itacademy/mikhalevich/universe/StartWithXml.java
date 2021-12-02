@@ -1,6 +1,6 @@
 package by.itacademy.mikhalevich.universe;
 
-import by.itacademy.mikhalevich.universe.model.StarSystem;
+import by.itacademy.mikhalevich.universe.model.system.StarSystem;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

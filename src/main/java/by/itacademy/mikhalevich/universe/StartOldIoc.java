@@ -1,8 +1,8 @@
 package by.itacademy.mikhalevich.universe;
 
-import by.itacademy.mikhalevich.universe.model.LifePlanet;
-import by.itacademy.mikhalevich.universe.model.NonLifePlanet;
-import by.itacademy.mikhalevich.universe.model.StarSystem;
+import by.itacademy.mikhalevich.universe.model.system.LifePlanet;
+import by.itacademy.mikhalevich.universe.model.system.NonLifePlanet;
+import by.itacademy.mikhalevich.universe.model.system.StarSystem;
 
 import java.util.List;
 import java.util.Map;

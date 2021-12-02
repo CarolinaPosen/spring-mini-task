@@ -1,6 +1,6 @@
 package by.itacademy.mikhalevich.universe.model.qualifiers;
 
-import by.itacademy.mikhalevich.universe.model.LifePlanet;
+import by.itacademy.mikhalevich.universe.model.system.LifePlanet;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.lang.annotation.ElementType;

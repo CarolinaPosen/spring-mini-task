@@ -1,9 +1,9 @@
-package by.itacademy.mikhalevich.universe.model;
+package by.itacademy.mikhalevich.universe.model.system;
 
+import by.itacademy.mikhalevich.universe.model.Entity;
 import by.itacademy.mikhalevich.universe.model.qualifiers.CustomClassQualifier;
 import lombok.*;
 
-import java.util.List;
 import java.util.Map;
 
 @EqualsAndHashCode(callSuper = true)

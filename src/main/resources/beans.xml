@@ -10,13 +10,13 @@
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 
-    <bean id="mars" class="by.itacademy.mikhalevich.universe.model.NonLifePlanet">
+    <bean id="mars" class="by.itacademy.mikhalevich.universe.model.system.NonLifePlanet">
         <constructor-arg index="0" value="1"/>
         <constructor-arg name="name" value="Mars"/>
         <constructor-arg name="isColonization" value="true"/>
     </bean>
 
-    <bean id="venus" class="by.itacademy.mikhalevich.universe.model.NonLifePlanet">
+    <bean id="venus" class="by.itacademy.mikhalevich.universe.model.system.NonLifePlanet">
         <property name="id" value="3"/>
         <property name="name" value="Venus"/>
         <property name="colonization" value="false"/>
@@ -28,7 +28,7 @@
     </util:list>
 
 
-    <bean id="earth" class="by.itacademy.mikhalevich.universe.model.LifePlanet" c:id="2" c:name="Earth">
+    <bean id="earth" class="by.itacademy.mikhalevich.universe.model.system.LifePlanet" c:id="2" c:name="Earth">
         <!--        <constructor-arg name="id" value="2"/>-->
         <!--        <constructor-arg name="name" value="Earth"/>-->
         <constructor-arg name="lifeForm" ref="lifeFormEarth"/>
@@ -47,7 +47,7 @@
         </util:map>
 
 
-    <bean id="starSystem" class="by.itacademy.mikhalevich.universe.model.StarSystem" init-method="start"
+    <bean id="starSystem" class="by.itacademy.mikhalevich.universe.model.system.StarSystem" init-method="start"
           destroy-method="finish">
         <constructor-arg name="id" value="1"/>
         <constructor-arg name="name" value="Solar System"/>
@@ -61,12 +61,12 @@
         </property>
     </bean>
 
-    <bean id="unknownStarSystem" class="by.itacademy.mikhalevich.universe.model.StarSystem">
+    <bean id="unknownStarSystem" class="by.itacademy.mikhalevich.universe.model.system.StarSystem">
         <constructor-arg name="id" value="#{starSystem.id+1000}"/>
         <constructor-arg name="name" value="#{'Unknown ' + starSystem.getClass().getSimpleName() }"/>
         <constructor-arg name="alias" value="#{starSystem.getClass().getSimpleName().toUpperCase().substring(4)}"/>
         <property name="lifePlanet">
-            <bean class="by.itacademy.mikhalevich.universe.model.LifePlanet"
+            <bean class="by.itacademy.mikhalevich.universe.model.system.LifePlanet"
                   c:id="#{T(Math).random()*10}"
                   c:name="unknownPlanet"/>
         </property>

@@ -1,5 +1,6 @@
-package by.itacademy.mikhalevich.universe.model;
+package by.itacademy.mikhalevich.universe.model.system;
 
+import by.itacademy.mikhalevich.universe.model.Entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
