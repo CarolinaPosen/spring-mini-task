@@ -1,8 +1,11 @@
 package by.itacademy.mikhalevich.universe.config;
 
+import by.itacademy.mikhalevich.universe.model.qualifiers.CustomClassQualifier;
 import by.itacademy.mikhalevich.universe.model.system.LifePlanet;
 import by.itacademy.mikhalevich.universe.model.system.NonLifePlanet;
 import by.itacademy.mikhalevich.universe.model.system.StarSystem;
+import by.itacademy.mikhalevich.universe.model.system.SyntheticLifePlanet;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
@@ -29,6 +32,14 @@ public class JavaBasedConfig {
     }
 
     @Bean
+    public SyntheticLifePlanet teegarden(){
+        SyntheticLifePlanet teegarden = new SyntheticLifePlanet(5, "Teegarden");
+        teegarden.setMaterial("Carbon");
+        teegarden.setLifeForm(Map.of("Silicon based life", 100, "Methanogens", 200, "Memetic life", 300));
+        return teegarden;
+    }
+
+    @Bean
     public NonLifePlanet mars(@Value("${mars.id}") int id,  @Value("${mars.name}") String name, @Value("${mars.isColonization}") boolean isColonization){
         NonLifePlanet mars = new NonLifePlanet(id, name, isColonization);
         return mars;
@@ -48,10 +59,12 @@ public class JavaBasedConfig {
         return nonLifePlanetsList;
     }
 
+
+
     @Bean
-    public StarSystem solarSystem(LifePlanet earth, List<NonLifePlanet> nonLifePlanets){
+    public StarSystem solarSystem(@CustomClassQualifier(clazz = SyntheticLifePlanet.class) LifePlanet lifePlanet, List<NonLifePlanet> nonLifePlanets){
         StarSystem solarSystem = new StarSystem(4, "Solar System", "SLRSSTM");
-        solarSystem.setLifePlanet(earth);
+        solarSystem.setLifePlanet(lifePlanet);
         solarSystem.setNonLifePlanets(nonLifePlanets);
         return solarSystem;
     }
