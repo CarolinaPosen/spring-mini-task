@@ -27,4 +27,13 @@ public class SyntheticLifePlanet extends LifePlanet {
         this.lifeForm = lifeForm;
     }
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer();
+        sb.append("'").append(name).append("'\n");
+        sb.append("material='").append(material).append("'\n");
+        sb.append("lifeForm=").append(lifeForm);
+        sb.append('\n');
+        return sb.toString();
+    }
 }

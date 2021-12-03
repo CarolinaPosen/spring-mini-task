@@ -50,4 +50,14 @@ public class StarSystem extends Entity {
         System.out.println("SolarSystem " + alias + " has been finished");
     }
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("\n");
+        sb.append("name='").append(name).append("'\n");
+        sb.append("alias='").append(alias).append("'\n");
+        sb.append("lifePlanet=").append(lifePlanet);
+        sb.append("nonLifePlanets=").append(nonLifePlanets);
+        sb.append('\n');
+        return sb.toString();
+    }
 }

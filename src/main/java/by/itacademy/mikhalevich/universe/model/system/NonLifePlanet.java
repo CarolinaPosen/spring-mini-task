@@ -18,4 +18,5 @@ public class NonLifePlanet extends Entity {
         super(id, name);
         this.isColonization = isColonization;
     }
+
 }

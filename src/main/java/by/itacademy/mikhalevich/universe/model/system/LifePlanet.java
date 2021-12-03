@@ -24,4 +24,12 @@ public class LifePlanet extends Entity {
         this.lifeForm = lifeForm;
     }
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer();
+        sb.append("'").append(name).append("'\n");
+        sb.append("lifeForm=").append(lifeForm);
+        sb.append('\n');
+        return sb.toString();
+    }
 }
