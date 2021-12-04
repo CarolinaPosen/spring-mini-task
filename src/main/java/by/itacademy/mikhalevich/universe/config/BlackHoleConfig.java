@@ -15,15 +15,21 @@ import java.util.Map;
 @PropertySource("classpath:black-hole.properties")
 public class BlackHoleConfig {
 
-    @Value("${black.id}")
-    private Integer id;
-    @Value("${black.name}")
-    private String name;
-    @Value("${black.weight}")
-    private int weigth;
+//    @Value("${black.id}")
+//    private Integer id;
+//    @Value("${black.name}")
+//    private String name;
+//    @Value("${black.weight}")
+//    private int weigth;
 
     @Bean
-    public BlackHole blackHole() {
+    public BlackHole Q0906(@Value("${black.Q.id}") int id, @Value("${black.Q.name}") String name, @Value("${black.Q.weight}") int weigth) {
+        BlackHole blackHole = new BlackHole(id, name, weigth);
+        return blackHole;
+    }
+
+    @Bean
+    public BlackHole HR6819(@Value("${black.X.id}") int id, @Value("${black.X.name}") String name, @Value("${black.X.weight}") int weigth) {
         BlackHole blackHole = new BlackHole(id, name, weigth);
         return blackHole;
     }
