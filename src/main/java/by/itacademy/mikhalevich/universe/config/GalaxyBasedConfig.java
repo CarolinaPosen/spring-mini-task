@@ -14,10 +14,10 @@ import org.springframework.context.annotation.Import;
 @Import({StarClusterConfig.class, DarkMatterClusterImpl.class})
 public class GalaxyBasedConfig {
 
-    @Bean
-    public Galaxy galaxy(@CustomClusterClassQualifier(clazz = StarClusterImpl.class) Cluster cluster){
-        Galaxy galaxy = new Galaxy(1, "Milky Way", cluster);
-        return galaxy;
-    }
+//    @Bean
+//    public Galaxy galaxy(@CustomClusterClassQualifier(clazz = StarClusterImpl.class) Cluster cluster){
+//        Galaxy galaxy = new Galaxy(1, "Milky Way", cluster);
+//        return galaxy;
+//    }
 
 }

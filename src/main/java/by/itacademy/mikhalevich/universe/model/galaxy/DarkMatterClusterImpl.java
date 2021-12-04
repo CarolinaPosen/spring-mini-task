@@ -2,25 +2,23 @@ package by.itacademy.mikhalevich.universe.model.galaxy;
 
 import by.itacademy.mikhalevich.universe.model.Entity;
 import by.itacademy.mikhalevich.universe.model.qualifiers.CustomClusterClassQualifier;
-import by.itacademy.mikhalevich.universe.model.system.StarSystem;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @CustomClusterClassQualifier(clazz = DarkMatterClusterImpl.class)
 @Component
-@PropertySource({"classpath:cluster.properties"})
+@PropertySource("classpath:galaxy.properties")
 public class DarkMatterClusterImpl extends Entity implements Cluster {
 
+    @Value("${cluster.dark.percentage}")
     private Integer substancesPercentage;
 
     public DarkMatterClusterImpl(Integer substancesPercentage) {

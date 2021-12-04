@@ -16,14 +16,16 @@ import org.springframework.stereotype.Component;
 @ToString(callSuper = true)
 @Data
 @NoArgsConstructor
-//@Component
-@PropertySource({"classpath:galaxy.properties"})
+@Component
+@PropertySource({"classpath:galaxy.properties", "classpath:black-hole.properties"})
 public class Galaxy extends Entity {
 
-    @Value("${galaxy.solar-system.black-hole}")
-    private String blackHole;
+    @Autowired
+    @Value("#{blackHole}")
+    private BlackHole blackHole;
 
-//    @CustomClusterClassQualifier(clazz = StarClusterImpl.class)
+    @Autowired
+    @CustomClusterClassQualifier(clazz = DarkMatterClusterImpl.class)
     private Cluster cluster;
 
     public Galaxy(int id, String name, Cluster cluster) {
