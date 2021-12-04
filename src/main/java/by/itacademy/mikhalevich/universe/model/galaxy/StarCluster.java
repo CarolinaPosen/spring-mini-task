@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @ToString(callSuper = true)
 @Data
 @NoArgsConstructor
+@Component
 public class StarCluster extends Entity {
 
     private List<StarSystem> starSystemList;
