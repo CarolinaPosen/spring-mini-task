@@ -2,6 +2,7 @@ package by.itacademy.mikhalevich.universe.model.galaxy;
 
 
 import by.itacademy.mikhalevich.universe.model.Entity;
+import by.itacademy.mikhalevich.universe.model.qualifiers.CustomClusterClassQualifier;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -15,18 +16,18 @@ import org.springframework.stereotype.Component;
 @ToString(callSuper = true)
 @Data
 @NoArgsConstructor
-@Component
+//@Component
 @PropertySource({"classpath:galaxy.properties"})
 public class Galaxy extends Entity {
 
     @Value("${galaxy.solar-system.black-hole}")
     private String blackHole;
 
-    @Autowired
-    private StarCluster starCluster;
+//    @CustomClusterClassQualifier(clazz = StarClusterImpl.class)
+    private Cluster cluster;
 
-    public Galaxy(int id, String name, StarCluster starCluster) {
+    public Galaxy(int id, String name, Cluster cluster) {
         super(id, name);
-        this.starCluster = starCluster;
+        this.cluster = cluster;
     }
 }

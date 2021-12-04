@@ -14,16 +14,16 @@ import java.util.List;
 @ToString(callSuper = true)
 @Data
 @NoArgsConstructor
-@Component
-public class StarCluster extends Entity {
+//@Component
+public class StarClusterImpl extends Entity implements Cluster  {
 
     private List<StarSystem> starSystemList;
 
-    public StarCluster(int id, String name) {
+    public StarClusterImpl(int id, String name) {
         super(id, name);
     }
 
-    public StarCluster(int id, String name, List<StarSystem> starSystemList) {
+    public StarClusterImpl(int id, String name, List<StarSystem> starSystemList) {
         super(id, name);
         this.starSystemList = starSystemList;
     }
