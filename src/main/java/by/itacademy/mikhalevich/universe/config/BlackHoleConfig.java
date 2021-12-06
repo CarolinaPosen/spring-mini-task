@@ -1,0 +1,31 @@
+package by.itacademy.mikhalevich.universe.config;
+
+import by.itacademy.mikhalevich.universe.model.galaxy.BlackHole;
+import by.itacademy.mikhalevich.universe.model.qualifiers.CustomClassQualifier;
+import by.itacademy.mikhalevich.universe.model.system.LifePlanet;
+import by.itacademy.mikhalevich.universe.model.system.SyntheticLifePlanet;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+import java.util.Map;
+
+@Configuration
+@PropertySource("classpath:black-hole.properties")
+public class BlackHoleConfig {
+
+    @Bean
+    public BlackHole Q0906(@Value("${black.Q.id}") int id, @Value("${black.Q.name}") String name, @Value("${black.Q.weight}") int weigth) {
+        BlackHole blackHole = new BlackHole(id, name, weigth);
+        return blackHole;
+    }
+
+    @Bean
+    public BlackHole HR6819(@Value("${black.X.id}") int id, @Value("${black.X.name}") String name, @Value("${black.X.weight}") int weigth) {
+        BlackHole blackHole = new BlackHole(id, name, weigth);
+        return blackHole;
+    }
+
+
+}

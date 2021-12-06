@@ -1,0 +1,38 @@
+package by.itacademy.mikhalevich.universe.model.galaxy;
+
+import by.itacademy.mikhalevich.universe.model.Entity;
+import by.itacademy.mikhalevich.universe.model.system.StarSystem;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@Data
+@NoArgsConstructor
+//@Component
+public class StarClusterImpl extends Entity implements Cluster  {
+
+    private List<StarSystem> starSystemList;
+
+    public StarClusterImpl(int id, String name) {
+        super(id, name);
+    }
+
+    public StarClusterImpl(int id, String name, List<StarSystem> starSystemList) {
+        super(id, name);
+        this.starSystemList = starSystemList;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("StarCluster\n");
+        sb.append("starSystemList=").append(starSystemList);
+        sb.append('\n');
+        return sb.toString();
+    }
+}

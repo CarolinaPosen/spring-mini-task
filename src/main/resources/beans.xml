@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:c="http://www.springframework.org/schema/c"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <bean id="mars" class="by.itacademy.mikhalevich.universe.model.system.NonLifePlanet">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg name="name" value="Mars"/>
+        <constructor-arg name="isColonization" value="true"/>
+    </bean>
+
+    <bean id="venus" class="by.itacademy.mikhalevich.universe.model.system.NonLifePlanet">
+        <property name="id" value="3"/>
+        <property name="name" value="Venus"/>
+        <property name="colonization" value="false"/>
+    </bean>
+
+    <util:list id="nonLifePlanet">
+        <ref bean="mars"/>
+        <ref bean="venus"/>
+    </util:list>
+
+
+    <bean id="earth" class="by.itacademy.mikhalevich.universe.model.system.LifePlanet" c:id="2" c:name="Earth">
+        <!--        <constructor-arg name="id" value="2"/>-->
+        <!--        <constructor-arg name="name" value="Earth"/>-->
+        <constructor-arg name="lifeForm" ref="lifeFormEarth"/>
+    </bean>
+
+    <!--    <util:list id="lifeFormEarth">-->
+    <!--        <value>100</value>-->
+    <!--        <value>200</value>-->
+    <!--        <value>300</value>-->
+    <!--    </util:list>-->
+
+        <util:map id="lifeFormEarth">
+            <entry key="Human" value="100"/>
+            <entry key="Plants" value="200"/>
+            <entry key="Bacteria" value="300"/>
+        </util:map>
+
+
+    <bean id="starSystem" class="by.itacademy.mikhalevich.universe.model.system.StarSystem" init-method="start"
+          destroy-method="finish">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="Solar System"/>
+        <constructor-arg name="alias" value="SLRSSTM"/>
+        <constructor-arg name="lifePlanet" ref="earth"/>
+        <property name="nonLifePlanets">
+            <list>
+                <ref bean="mars"/>
+                <ref bean="venus"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="unknownStarSystem" class="by.itacademy.mikhalevich.universe.model.system.StarSystem">
+        <constructor-arg name="id" value="#{starSystem.id+1000}"/>
+        <constructor-arg name="name" value="#{'Unknown ' + starSystem.getClass().getSimpleName() }"/>
+        <constructor-arg name="alias" value="#{starSystem.getClass().getSimpleName().toUpperCase().substring(4)}"/>
+        <property name="lifePlanet">
+            <bean class="by.itacademy.mikhalevich.universe.model.system.LifePlanet"
+                  c:id="#{T(Math).random()*10}"
+                  c:name="unknownPlanet"/>
+        </property>
+        <property name="nonLifePlanets">
+            <list>
+                <ref bean="mars"/>
+                <ref bean="venus"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
