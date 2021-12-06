@@ -1,5 +1,6 @@
 package by.itacademy.mikhalevich.universe;
 
+import by.itacademy.mikhalevich.universe.model.Universe;
 import by.itacademy.mikhalevich.universe.model.galaxy.Galaxy;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -11,8 +12,8 @@ public class StartWithJavaBasedConfig {
                 new AnnotationConfigApplicationContext("by.itacademy.mikhalevich.universe");
         ctx.registerShutdownHook();
 
-        Galaxy galaxy = ctx.getBean("galaxy", Galaxy.class);
-        galaxy.print();
+        Universe universe = ctx.getBean("universe", Universe.class);
+        universe.print();
     }
 
 }

@@ -20,7 +20,7 @@ public class StarClusterConfig {
 
     @CustomClusterClassQualifier(clazz = StarClusterImpl.class)
     @Bean
-    public StarClusterImpl starClusterImpl(@Autowired StarSystem solarSystem, @Autowired StarSystem siriusSystem){
+    public StarClusterImpl starClusterImpl(StarSystem solarSystem, StarSystem siriusSystem){
         StarClusterImpl starCluster = new StarClusterImpl(100, "starCluster001");
         starCluster.setStarSystemList(List.of(solarSystem, siriusSystem));
         return starCluster;

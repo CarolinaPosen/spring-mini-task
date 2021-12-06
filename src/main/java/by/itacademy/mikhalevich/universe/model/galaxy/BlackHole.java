@@ -21,4 +21,14 @@ public class BlackHole {
         this.name = name;
         this.weight = weight;
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer();
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", weight=").append(weight);
+        sb.append("\n");
+        return sb.toString();
+    }
 }

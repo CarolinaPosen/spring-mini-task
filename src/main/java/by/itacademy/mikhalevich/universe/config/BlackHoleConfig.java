@@ -15,13 +15,6 @@ import java.util.Map;
 @PropertySource("classpath:black-hole.properties")
 public class BlackHoleConfig {
 
-//    @Value("${black.id}")
-//    private Integer id;
-//    @Value("${black.name}")
-//    private String name;
-//    @Value("${black.weight}")
-//    private int weigth;
-
     @Bean
     public BlackHole Q0906(@Value("${black.Q.id}") int id, @Value("${black.Q.name}") String name, @Value("${black.Q.weight}") int weigth) {
         BlackHole blackHole = new BlackHole(id, name, weigth);

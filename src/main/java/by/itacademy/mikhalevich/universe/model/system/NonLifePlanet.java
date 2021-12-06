@@ -19,4 +19,13 @@ public class NonLifePlanet extends Entity {
         this.isColonization = isColonization;
     }
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("{");
+        sb.append("isColonization=").append(isColonization);
+        sb.append(", id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

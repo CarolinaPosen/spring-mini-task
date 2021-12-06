@@ -52,4 +52,13 @@ public class Galaxy extends Entity {
 
     }
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Galaxy");
+        sb.append(" name='").append(name).append("\n");
+        sb.append("blackHole=").append(blackHole);
+        sb.append(", cluster=").append(cluster);
+        sb.append('}');
+        return sb.toString();
+    }
 }
