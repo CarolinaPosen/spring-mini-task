@@ -13,8 +13,7 @@ public class StartWithXmlPropertiesAutowiring {
 
         StarSystem solarSystem = ctx.getBean("solarSystem", StarSystem.class);
         solarSystem.print();
+
+
     }
-
-
-
 }

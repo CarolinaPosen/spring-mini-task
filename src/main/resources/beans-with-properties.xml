@@ -20,15 +20,29 @@
         <constructor-arg name="isColonization" value="${mars.isColonization}"/>
     </bean>
 
+    <bean id="jupiter" class="by.itacademy.mikhalevich.universe.model.NonLifePlanet"
+          p:id="${jupiter.id}"
+          p:name="${jupiter.name}"
+          p:colonization="${jupiter.isColonization}"/>
+
+
     <bean id="venus" class="by.itacademy.mikhalevich.universe.model.NonLifePlanet">
         <property name="id" value="${venus.id}"/>
         <property name="name" value="${venus.name}"/>
         <property name="colonization" value="${venus.isColonization}"/>
     </bean>
 
+    <bean id="mercury" class="by.itacademy.mikhalevich.universe.model.NonLifePlanet">
+        <property name="id" value="${mercury.id}"/>
+        <property name="name" value="${mercury.name}"/>
+        <property name="colonization" value="${mercury.isColonization}"/>
+    </bean>
+
     <util:list id="nonLifePlanet">
         <ref bean="mars"/>
         <ref bean="venus"/>
+        <ref bean="jupiter"/>
+        <ref bean="mercury"/>
     </util:list>
 
     <bean id="earth" class="by.itacademy.mikhalevich.universe.model.LifePlanet" c:id="${earth.id}" c:name="${earth.name}">
@@ -51,6 +65,7 @@
             <list>
                 <ref bean="mars"/>
                 <ref bean="venus"/>
+                <ref bean="jupiter"/>
             </list>
         </property>
     </bean>

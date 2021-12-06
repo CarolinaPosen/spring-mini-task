@@ -27,7 +27,7 @@
         <property name="colonization" value="${venus.isColonization}"/>
     </bean>
 
-    <util:list id="nonLifePlanet">
+    <util:list id="nonLifePlanets">
         <ref bean="mars"/>
         <ref bean="venus"/>
     </util:list>
@@ -54,12 +54,12 @@
         <constructor-arg name="name" value="${solarSystem.name}"/>
         <constructor-arg name="alias" value="${solarSystem.alias}"/>
 <!--        <constructor-arg name="lifePlanet" ref="earth"/>-->
-        <property name="nonLifePlanets">
-            <list>
-                <ref bean="mars"/>
-                <ref bean="venus"/>
-            </list>
-        </property>
+<!--        <property name="nonLifePlanets">-->
+<!--            <list>-->
+<!--                <ref bean="mars"/>-->
+<!--                <ref bean="venus"/>-->
+<!--            </list>-->
+<!--        </property>-->
     </bean>
 
 </beans>

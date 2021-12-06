@@ -68,7 +68,7 @@
         <property name="lifePlanet">
             <bean class="by.itacademy.mikhalevich.universe.model.LifePlanet"
                   c:id="#{T(Math).random()*10}"
-                  c:name="unknownPlanet"/>
+                  c:name= "#{'unknownPlanet ' + new java.util.Random().nextInt(100)}"/>
         </property>
         <property name="nonLifePlanets">
             <list>
