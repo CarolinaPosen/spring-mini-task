@@ -45,12 +45,12 @@ public class StarSystem extends Entity {
         this.nonLifePlanets = nonLifePlanets;
     }
 
-    public void start(){
-        System.out.println("SolarSystem " + alias + " has been created");
-    }
-
-    public void finish(){
-        System.out.println("SolarSystem " + alias + " has been finished");
-    }
+//    public void start(){
+//        System.out.println("SolarSystem " + alias + " has been created");
+//    }
+//
+//    public void finish(){
+//        System.out.println("SolarSystem " + alias + " has been finished");
+//    }
 
 }

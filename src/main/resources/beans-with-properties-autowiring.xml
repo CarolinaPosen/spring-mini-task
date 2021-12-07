@@ -48,8 +48,7 @@
     </bean>
 
 
-    <bean id="solarSystem" class="by.itacademy.mikhalevich.universe.model.StarSystem" autowire="byName" init-method="start"
-          destroy-method="finish">
+    <bean id="solarSystem" class="by.itacademy.mikhalevich.universe.model.StarSystem" autowire="byName">
         <constructor-arg name="id" value="${solarSystem.id}"/>
         <constructor-arg name="name" value="${solarSystem.name}"/>
         <constructor-arg name="alias" value="${solarSystem.alias}"/>
@@ -60,6 +59,30 @@
 <!--                <ref bean="venus"/>-->
 <!--            </list>-->
 <!--        </property>-->
+    </bean>
+
+    <util:list id="starSystem">
+        <ref bean="solarSystem"/>
+    </util:list>
+
+
+    <bean id="milkyWay" class="by.itacademy.mikhalevich.universe.model.Galaxy" p:name = "Milky Way" p:starSystemList-ref="solarSystem"/>
+    <bean id="andromeda" class="by.itacademy.mikhalevich.universe.model.Galaxy" p:name = "Andromeda">
+
+    </bean>
+
+    <util:list id="galaxyList">
+        <ref bean="milkyWay"/>
+        <ref bean="andromeda"/>
+    </util:list>
+
+<bean id="instanceUniverseFactory" class="by.itacademy.mikhalevich.universe.model.InstanceUniverseFactory"/>
+
+    <bean id="universe"
+          factory-bean="instanceUniverseFactory"
+          factory-method="createInstance" init-method="start"
+          destroy-method="finish">
+        <constructor-arg ref="galaxyList"/>
     </bean>
 
 </beans>
